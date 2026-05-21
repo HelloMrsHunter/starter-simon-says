@@ -98,10 +98,22 @@ startButton.addEventListener("click", startButtonHandler);
  *
  */
 function startButtonHandler() {
-  // TODO: Write your code here.
-startButton.addEventListener("click", startButtonHandler);
- return { startButton, statusSpan };
+  // Set the level
+  maxRoundCount = setLevel(1);
+
+  // Start at round 1
+  roundCount = 1;
+
+  // Hide the start button
+  startButton.classList.add("hidden");
+
+  // Show the status text
+  statusSpan.classList.remove("hidden");
+
+  // Start the computer's turn
+  computerTurn(roundCount, maxRoundCount);
 }
+
 
 /**
  * Called when one of the pads is clicked.
@@ -273,8 +285,7 @@ function activatePads(sequence) {
  * to the current round (roundCount) multiplied by 600ms which is the duration for each pad in the
  * sequence.
  */
- function playComputerTurn() {
-function computerTurn(roundCount, maxRoundCount) {
+ function computerTurn(roundCount, maxRoundCount) {
   // Prevent user clicks
   padContainer.classList.add("unclickable");
 
@@ -289,7 +300,7 @@ function computerTurn(roundCount, maxRoundCount) {
   computerSequence.push(randomColor);
 
   // Activate the sequence of pads
-  activateSequence(computerSequence);
+  activatePads(computerSequence);
 
   // After the sequence finishes, give control to the player
   setTimeout(() => playHumanTurn(roundCount), roundCount * 600 + 1000); // 5
@@ -305,7 +316,7 @@ function computerTurn(roundCount, maxRoundCount) {
 function playHumanTurn() { 
   padContainer.classList.remove("unclickable");
   // 2. Show how many presses are left
-  const pressesLeft = roundCount;
+  const pressesLeft = computerSequence.length;;
   setText(statusSpan, `Your turn! ${pressesLeft} press${pressesLeft > 1 ? "es" : ""} left`);
 }
 
