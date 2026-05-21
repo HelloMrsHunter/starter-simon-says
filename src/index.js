@@ -303,7 +303,8 @@ function activatePads(sequence) {
   activatePads(computerSequence);
 
   // After the sequence finishes, give control to the player
-  setTimeout(() => playHumanTurn(roundCount), roundCount * 600 + 1000); // 5
+setTimeout(() => playHumanTurn(), roundCount * 600 + 1000);
+
 }
 
 /**
@@ -315,7 +316,6 @@ function activatePads(sequence) {
  */
 function playHumanTurn() { 
   padContainer.classList.remove("unclickable");
-  // 2. Show how many presses are left
   const pressesLeft = computerSequence.length;;
   setText(statusSpan, `Your turn! ${pressesLeft} press${pressesLeft > 1 ? "es" : ""} left`);
 }
