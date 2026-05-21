@@ -79,7 +79,7 @@ h1 {
 
 .pad-red:active,
 .pad-red.activated {
-  background-color: #ff5c36;
+  background-color: #800000;
   transform: translateY(10px);
 }
 
@@ -90,7 +90,7 @@ h1 {
 
 .pad-green:hover,
 .pad-green:focus {
-  background-color: #8cc218;
+  background-color: #006400;
   transform: rotate(5deg);
 }
 
@@ -107,7 +107,7 @@ h1 {
 
 .pad-yellow:hover,
 .pad-yellow:focus {
-  background-color: #ffb900;
+  background-color: #FFD700;
   transform: rotate(5deg);
 }
 
@@ -130,7 +130,7 @@ h1 {
 
 .pad-blue:active,
 .pad-blue.activated {
-  background-color: #2bbcff;
+  background-color: #4B0082;
   transform: translateY(10px);
 }
 
