@@ -111,7 +111,7 @@ function startButtonHandler() {
   statusSpan.classList.remove("hidden");
 
   // Start the computer's turn
-  computerTurn(roundCount, maxRoundCount);
+  playComputerTurn(roundCount, maxRoundCount);
 }
 
 
@@ -285,7 +285,7 @@ function activatePads(sequence) {
  * to the current round (roundCount) multiplied by 600ms which is the duration for each pad in the
  * sequence.
  */
- function computerTurn(roundCount, maxRoundCount) {
+ function playComputerTurn(roundCount, maxRoundCount) {
   // Prevent user clicks
   padContainer.classList.add("unclickable");
 
@@ -401,7 +401,7 @@ function checkRound() {
 
   // Delay before the computer plays again
   setTimeout(() => {
-    computerTurn(roundCount, maxRoundCount);
+    playComputerTurn(roundCount, maxRoundCount);
   }, 1000);
 }
 
