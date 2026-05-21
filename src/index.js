@@ -100,8 +100,7 @@ startButton.addEventListener("click", startButtonHandler);
 function startButtonHandler() {
   // TODO: Write your code here.
 startButton.addEventListener("click", startButtonHandler);
-
-  return { startButton, statusSpan };
+ return { startButton, statusSpan };
 }
 
 /**
