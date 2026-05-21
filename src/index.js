@@ -4,9 +4,9 @@
 
  const startButton = document.querySelector(".js-start-button");
  // TODO: Add the missing query selectors:
- const statusSpan; // Use querySelector() to get the status element
- const heading; // Use querySelector() to get the heading element
- const padContainer; // Use querySelector() to get the heading element
+ const statusSpan = document.querySelector(".js-status");
+const heading = document.querySelector(".js-heading");
+const padContainer = document.querySelector(".js-pad-container");
 
 /**
  * VARIABLES
@@ -31,14 +31,44 @@ let roundCount = 0; // track the number of rounds that have been played so far
  *
  */
 
- const pads = [
+const pads = [
   {
     color: "red",
     selector: document.querySelector(".js-pad-red"),
-    sound: new Audio("../assets/simon-says-sound-1.mp3"),
+    sound: new Audio(
+      "https://github.com/kchia/simon-says-sounds/blob/main/simon-says-sound-1.mp3?raw=true"
+    ),
+  },// TODO: Add the objects for the green, blue, and yellow pads. Use the object defined for the red pad above as an example.
+
+  
+  // GREEN PAD
+  {
+    color: "green",
+    selector: document.querySelector(".js-pad-green"),
+    sound: new Audio(
+      "https://github.com/kchia/simon-says-sounds/blob/main/simon-says-sound-2.mp3?raw=true"
+    ),
   },
-  // TODO: Add the objects for the green, blue, and yellow pads. Use object for the red pad above as an example.
+
+  // BLUE PAD
+  {
+    color: "blue",
+    selector: document.querySelector(".js-pad-blue"),
+    sound: new Audio(
+      "https://github.com/kchia/simon-says-sounds/blob/main/simon-says-sound-3.mp3?raw=true"
+    ),
+  },
+
+  // YELLOW PAD
+  {
+    color: "yellow",
+    selector: document.querySelector(".js-pad-yellow"),
+    sound: new Audio(
+      "https://github.com/kchia/simon-says-sounds/blob/main/simon-says-sound-4.mp3?raw=true"
+    ),
+  },
 ];
+  
 
 /**
  * EVENT LISTENERS
